@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Venue, Our 360° Vision</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/gh/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/2a283bf6a0.js" crossorigin="anonymous"></script>
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Tab Icon -->
+  <link rel="icon" href="./tab-logo.png" type="image/png">
+
+
+  <style>
+    /* General Styles */
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow-x: hidden;
+      background-image: radial-gradient(#021027c9, #000000);
+      font-family: Arial, sans-serif;
+      display: block;
+      scroll-behavior: smooth;
+    }
+
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #0000002a;
+        border-radius: 4px;
+        transition: background 2s ease-out;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #ffffffab;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.342);
+        border-radius: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffffef;
+      text-align: center;
+      font-family: 'Trebuchet MS', sans-serif;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .superapp-wrapper .first {
+      color: transparent;
+      background: linear-gradient(45deg, rgb(137, 218, 255), #00d5ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 4px 4px 8px rgba(88, 88, 88, 0.363);
+    }
+
+    .particle-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 50%;
+      opacity: 0.8;
+      width: 2px;
+      height: 2px;
+    }
+
+    .main-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(to right, rgba(54, 54, 54, 0.103), rgba(0, 0, 0, 0.795)), url('./file.png') no-repeat center center; 
+      background-size: cover; 
+      text-align: center;
+      position: relative;
+    }
+
+    .main-section h2 {
+      font-size: 36px;
+      color: #ffffff;
+    }
+
+    .main-section h2 span {
+      font-weight: bold;
+    }
+
+    .main-section h3 {
+      font-size: 24px;
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    .join-btn {
+      background-color: #33a3ff;
+      color: white;
+      width: 210px;
+      padding: 10px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+      .header-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          padding: 20px 0;
+          background-color: transparent; 
+          
+      }
+
+      .centered-header {
+          color: white; 
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+          background-color: transparent;
+      }
+
+      .scrolling-banner {
+        overflow: hidden;
+        width: 100%;
+        padding: 10px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #021027; 
+    }
+
+
+      .scroll-content {
+          display: flex;
+          gap: 20px;
+          animation: scroll 60s linear infinite;
+          
+
+      }
+
+      .scroll-content img {
+        height: 50px;
+        object-fit: contain;
+        background-color: #021027; 
+    }
+
+
+      @keyframes scroll {
+          0% {
+              transform: translateX(0);
+          }
+          100% {
+              transform: translateX(-100%);
+          }
+      }
+      .testimonials-section {
+        text-align: center;
+        padding: 40px 20px;
+        background: transparent;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 1200px;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .testimonials-section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #A5D6D3;
+    }
+
+    .testimonials-wrapper {
+        display: flex;
+        gap: 20px;
+        animation: scroll 60s linear infinite;
+        width: max-content;
+        will-change: transform;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .testimonial-card {
+        background-color: #b4b4b4c0;
+        color: #000;
+        border-radius: 10px;
+        padding: 20px;
+        min-width: 300px;
+        max-width: 300px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .profile-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .profile-info img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .profile-info h3 {
+        font-size: 18px;
+        margin: 0;
+        color: #000000;
+    }
+
+    .title {
+        font-size: 14px;
+        color: #474747;
+        margin-top: 2px;
+    }
+
+    .testimonial-text {
+        font-size: 14px;
+        color: #1f1f1f;
+        line-height: 1.6;
+        margin-top: 10px;
+    }
+
+
+    /* Footer */
+    .footer {
+
+      color: #d1d1d1;
+      padding: 40px 20px;
+      font-family: Arial, sans-serif;
+      padding-bottom: 10px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .footer-logo-description,
+    .footer-social,
+    .footer-links,
+    .footer-services {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #87d0ff;
+    }
+
+    .footer-logo-description {
+      margin-right: 30px;
+      align-items: top;
+    }
+
+    .footer-logo-description p {
+      font-size: 0.9em;
+      color: #b0b0b0;
+    }
+
+    .footer-social h3,
+    .footer-links h3,
+    .footer-services h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .footer-social ul,
+    .footer-links ul,
+    .footer-services ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-social li,
+    .footer-links li,
+    .footer-services li {
+      margin: 5px 0;
+    }
+
+    .footer-social a,
+    .footer-links a,
+    .footer-services a {
+      color: #87d0ff;
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover,
+    .footer-links a:hover,
+    .footer-services a:hover {
+      color: #ffffff;
+    }
+
+    .footer-logo-description p,
+    .footer-social a,
+    .footer-links a,
+    .footer-services a {
+      color: #b0b0b0;
+    }
+
+    .footer-social .social-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .footer-social .social-icons a {
+      text-decoration: none;
+      transition: transform 0.2s, color 0.3s ease;
+    }
+
+    .footer-social .social-icons a:hover {
+      transform: scale(1.2);
+      color: #87d0ff;
+    }
+
+    .footer-social .social-icons i {
+      color: #d1d1d1;
+      font-size: 28px;
+    }
+
+    .footer a:hover {
+      color: #ffffff;
+    }
+
+    /* App Buttons */
+    .footer-app-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .footer-app-buttons img {
+      width: 120px; 
+      height: 40px;
+      transition: transform 0.2s ease;
+    }
+
+    .footer-app-buttons img:hover {
+      transform: scale(1.0); 
+    }
+
+    /* Center copyright text */
+    .footer-copyright {
+      text-align: center;
+      padding: 15px 0;
+      border-top: 1px solid #444;
+      font-size: 0.85em;
+      color: #888;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- Particle Background -->
+  <div class="particle-background"></div>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container text-center">
+      <h1>Your Venue, Our 360° Vision!<br>
+        <span class="superapp-wrapper">
+          <span class="first"><i class="fas fa-rocket"></i> #SuperApp</span>
+        </span>
+      </h1>
+    </div>
+  </section>
+
+<!-- Main Section -->
+<div class="main-section">
+  <div>
+    <h2>Own a Business or Property?</h2>
+    <h3>Become a part of the world's most Relentless 360° network now</h3>
+    <button class="join-btn" onclick="openPopup()">Join Us</button>
+  </div>
+</div>
+
+<!-- Partner Popup
+<div class="partner-popup" id="partnerPopup">
+  <div class="partner-content">
+    <div class="close-btn" onclick="closePopup()">X</div>
+    <div class="left-column">
+      <h3>Join the 360° network today</h3>
+      <p>Fill out the form, and we’ll respond within 24 hours.</p>
+      <div class="contact-info">
+        <p><i class="fa fa-envelope"></i> reachus@letzstepin.com</p>
+        <p><i class="fa fa-map-marker"></i> Wakad, Pune, Maharashtra 411057</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://linkedin.com" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="right-column">
+      <form>
+        <div class="input-container">
+          <i class='bx bxs-user' style='color: rgba(13,218,234,0.94);'></i>
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="input-container">
+          <i class='bx bxs-envelope' style='color: rgba(13,218,234,0.94);'></i>
+          <input type="email" placeholder="Your Email" required>
+        </div>
+        <div class="input-container">
+          <i class='bx bxs-phone' style='color: rgba(13,218,234,0.94);'></i>
+          <input type="tel" placeholder="Phone Number" required>
+        </div>
+    
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="type" value="Business" required> Business
+          </label>
+          <label>
+            <input type="radio" name="type" value="Property" required> Property
+          </label>
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+    
+  </div> 
+</div>-->
+<section class="testimonials-section">
+<div class="header-container">
+  <div class="centered-header">Our Happy Customers</div>
+</div>
+<div class="scrolling-banner">
+  <div class="scroll-content">
+    <img src="../rise.jpeg" alt="Rise">
+    <img src="../twinlo.jpg" alt="Twinlo">
+    <img src="../partner/coco.jpeg" alt="Coco">
+    <img src="../partner/images.png" alt="Images">
+    <img src="../partner/logo.png" alt="Logo">
+    <img src="../vibha.png" alt="Vibha">
+    <img src="../cocotang.jpeg" alt="Cocotang">
+    <img src="../mk.png" alt="MK">
+    <img src="../extra.png" alt="Extra">
+    <img src="../early.webp" alt="Early">
+    <img src="../rise.jpeg" alt="Rise">
+    <img src="../twinlo.jpg" alt="Twinlo">
+    <img src="../partner/coco.jpeg" alt="Coco">
+    <img src="../partner/images.png" alt="Images">
+    <img src="../partner/logo.png" alt="Logo">
+    <img src="../vibha.png" alt="Vibha">
+    <img src="../cocotang.jpeg" alt="Cocotang">
+    <img src="../mk.png" alt="MK">
+    <img src="../extra.png" alt="Extra">
+    <img src="../early.webp" alt="Early">
+    <img src="../rise.jpeg" alt="Rise">
+    <img src="../twinlo.jpg" alt="Twinlo">
+    <img src="../partner/coco.jpeg" alt="Coco">
+    <img src="../partner/images.png" alt="Images">
+    <img src="../partner/logo.png" alt="Logo">
+    <img src="../vibha.png" alt="Vibha">
+    <img src="../cocotang.jpeg" alt="Cocotang">
+    <img src="../mk.png" alt="MK">
+    <img src="../extra.png" alt="Extra">
+    <img src="../early.webp" alt="Early">
+    <img src="../rise.jpeg" alt="Rise">
+    <img src="../twinlo.jpg" alt="Twinlo">
+    <img src="../partner/coco.jpeg" alt="Coco">
+    <img src="../partner/images.png" alt="Images">
+    <img src="../partner/logo.png" alt="Logo">
+    <img src="../vibha.png" alt="Vibha">
+    <img src="../cocotang.jpeg" alt="Cocotang">
+    <img src="../mk.png" alt="MK">
+    <img src="../extra.png" alt="Extra">
+    <img src="../early.webp" alt="Early">
+    <img src="../rise.jpeg" alt="Rise">
+    <img src="../twinlo.jpg" alt="Twinlo">
+    <img src="../partner/coco.jpeg" alt="Coco">
+    <img src="../partner/images.png" alt="Images">
+    <img src="../partner/logo.png" alt="Logo">
+    <img src="../vibha.png" alt="Vibha">
+    <img src="../cocotang.jpeg" alt="Cocotang">
+    <img src="../mk.png" alt="MK">
+    <img src="../extra.png" alt="Extra">
+    <img src="../early.webp" alt="Early">
+  </div>
+</div>
+<div style="color: white; font-size: 54px; padding: 20px 0;">
+  Testimonials
+</div>
+
+
+  <div class="testimonials-wrapper">
+      <div class="testimonial-card">
+          <div class="profile-info">
+              <img src="https://i.pinimg.com/736x/01/3b/89/013b89efda473e8d2f99e64d6ca75270.jpg" alt="Profile Picture">
+              <div>
+                  <h3>Paulia Bamert</h3>
+                  <p class="title">VP of Marketing</p>
+              </div>
+          </div>
+          <p class="testimonial-text">
+            "The team at LetzStepIn was fantastic to work with! They took our vision for a virtual reality platform and brought it to life with a beautiful and intuitive website. Their attention to detail and creativity made all the difference. We're thrilled with the results!"
+          </p>
+      </div>
+      <div class="testimonial-card">
+          <div class="profile-info">
+              <img src="https://i.pinimg.com/736x/02/44/ce/0244ce2353be47aa217700c6039e96e4.jpg" alt="Profile Picture">
+              <div>
+                  <h3>Marta Tsimicalis</h3>
+                  <p class="title">Corporate Marketing</p>
+              </div>
+          </div>
+          <p class="testimonial-text">
+            "LetzStepIn exceeded our expectations in every way. Their expertise in virtual reality helped us create a stunning website that captivates our audience. The process was smooth, and the final product is a perfect reflection of our brand. Highly recommend!"
+          </p>
+      </div>
+      <div class="testimonial-card">
+          <div class="profile-info">
+              <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"alt="Profile Picture">
+              <div>
+                  <h3>Christine Nero</h3>
+                  <p class="title">Director of Marketing</p>
+              </div>
+          </div>
+          <p class="testimonial-text">
+            "Our experience with LetzStepIn was fantastic from start to finish. They took our ideas and transformed them into a beautiful, immersive website. Their expertise in virtual reality shines through in every detail. We’re thrilled with the final product!"
+          </p>
+      </div>
+      <div class="testimonial-card">
+        <div class="profile-info">
+            <img src="https://i.pinimg.com/736x/e0/5a/6c/e05a6c7db055b6c6b14d5445e3b4875b.jpg" alt="Profile Picture">
+            <div>
+                <h3>Scarlett jones</h3>
+                <p class="title">Director of Marketing</p>
+            </div>
+        </div>
+        <p class="testimonial-text">
+          "Our experience with LetzStepIn was fantastic from start to finish. They took our ideas and transformed them into a beautiful, immersive website. Their expertise in virtual reality shines through in every detail. We’re thrilled with the final product!"
+        </p>
+    </div>      <div class="testimonial-card">
+      <div class="profile-info">
+          <img src="https://i.pinimg.com/564x/72/7a/04/727a048cab0189385896c0f6e70e1400.jpg" alt="Profile Picture">
+          <div>
+              <h3>Mikasa Ackerman</h3>
+              <p class="title">Director of Marketing</p>
+          </div>
+      </div>
+      <p class="testimonial-text">
+        "Our experience with LetzStepIn was fantastic from start to finish. They took our ideas and transformed them into a beautiful, immersive website. Their expertise in virtual reality shines through in every detail. We’re thrilled with the final product!"
+      </p>
+  </div>
+      <div class="testimonial-card">
+          <div class="profile-info">
+              <img src="https://i.pinimg.com/564x/ce/3d/7c/ce3d7c5522ae269a7d5fe9a7c34bf134.jpg" alt="Profile Picture">
+              <div>
+                  <h3>TUN TUN MAUSI</h3>
+                  <p class="title">CEO</p>
+              </div>
+          </div>
+          <p class="testimonial-text">
+            "I can't recommend LetzStepIn enough! Their creativity and technical skills brought our vision for a virtual reality platform to life. The new website is not only visually impressive but also incredibly easy to navigate. It truly sets us apart in the industry!"
+          </p>
+      </div>
+  </div>
+</section>
+<script>
+  const wrapper = document.querySelector('.testimonials-wrapper');
+  wrapper.innerHTML += wrapper.innerHTML; 
+</script>
+
+<!-- JavaScript -->
+<!-- <script>
+  // Open the popup
+  function openPopup() {
+    document.getElementById('partnerPopup').style.display = 'flex';
+  }
+
+  // Close the popup
+  function closePopup() {
+    document.getElementById('partnerPopup').style.display = 'none';
+  }
+
+  // Close popup when clicking outside the content
+  window.onclick = function(event) {
+    var popup = document.getElementById('partnerPopup');
+    if (event.target === popup) {
+      popup.style.display = 'none';
+    }
+  };
+</script> -->
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo-description">
+        <div class="footer-logo">LetzStepIn</div>
+        <p>LetzStepIn – India's avant-garde super app designed to seamlessly integrate into your daily lifestyle, property endeavors, and travel escapades. We're not just a platform; we're a commitment to user satisfaction, guaranteeing unparalleled benefits, quality, and safety.</p>
+    
+        <!-- App Store Buttons -->
+        <div class="footer-app-buttons">
+          <a href="https://play.google.com/store" target="_blank">
+            <img src="./play-store.svg" alt="Get it on Google Play" class="app-button play-store">
+          </a>
+          <a href="https://www.apple.com/app-store/" target="_blank">
+            <img src="./app-store.svg" alt="Download on the App Store" class="app-button app-store">
+          </a>
+        </div>        
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/letzstepin.com_/" class="social-icon instagram" target="_blank">
+            <i class='bx bxl-instagram' style='font-size: 30px; color:#ffffff;'></i>
+          </a>
+          <a href="https://www.facebook.com/Letzstepinn/" class="social-icon facebook" target="_blank">
+            <i class='bx bxl-facebook-circle' style='font-size: 30px; color:#ffffff;'></i>
+          </a>
+          <a href="https://twitter.com/letzstepin" class="social-icon x" target="_blank">
+            <i class="fa-brands fa-x-twitter" style="font-size: 30px; color:#ffffff;"></i>
+          </a>
+          <a href="https://www.youtube.com/@letzstepin" class="social-icon youtube" target="_blank">
+            <i class='bx bxl-youtube' style='font-size: 30px; color:#ffffff;'></i>
+          </a>
+          <a href="https://www.linkedin.com/company/letzstepin/" class="social-icon linkedin" target="_blank">
+            <i class='bx bxl-linkedin' style='font-size: 30px; color:#ffffff;'></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Refer & Earn</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>          
+        </ul>
+      </div>
+
+      <!-- Our Services -->
+      <div class="footer-services">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#">Shopping</a></li>
+          <li><a href="#">Food Delivery</a></li>
+          <li><a href="#">Healthcare</a></li>
+          <li><a href="#">Fitness</a></li>
+          <li><a href="#">Education</a></li>
+          <li><a href="#">Automobile</a></li>
+          <li><a href="#">Real Estate</a></li>          
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright Notice -->
+    <div class="footer-copyright">
+      <p>© Copyright Letzstepin. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const particleContainer = document.querySelector(".particle-background");
+
+      // Track cursor direction
+      let lastX = window.innerWidth / 2;
+      let lastY = window.innerHeight / 2;
+      let velocityX = 0;
+      let velocityY = 0;
+      const stars = [];
+      for (let i = 0; i < 150; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        const posX = Math.random() * window.innerWidth;
+        const posY = Math.random() * window.innerHeight;
+        star.style.left = `${posX}px`;
+        star.style.top = `${posY}px`;
+
+        stars.push({
+          element: star,
+          x: posX,
+          y: posY,
+          speed: Math.random() * 1 + 0.5,
+          driftX: (Math.random() - 0.5) * 0.5,
+          driftY: (Math.random() - 0.5) * 0.5
+        });
+
+        particleContainer.appendChild(star);
+      }
+
+      document.addEventListener("mousemove", (e) => {
+        velocityX = e.clientX - lastX;
+        velocityY = e.clientY - lastY;
+        lastX = e.clientX;
+        lastY = e.clientY;
+      });
+
+      function animateStars() {
+        stars.forEach((star) => {
+          star.x += (velocityX * 0.1 + star.driftX) * star.speed;
+          star.y += (velocityY * 0.1 + star.driftY) * star.speed;
+
+          if (star.x > window.innerWidth) star.x = 0;
+          if (star.x < 0) star.x = window.innerWidth;
+          if (star.y > window.innerHeight) star.y = 0;
+          if (star.y < 0) star.y = window.innerHeight;
+
+          star.element.style.transform = `translate(${star.x}px, ${star.y}px)`;
+        });
+
+        requestAnimationFrame(animateStars);
+      }
+
+      animateStars();
+    });
+  </script>
+</body>
+</html>
